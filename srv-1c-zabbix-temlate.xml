@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
-    <version>3.4</version>
-    <date>2018-05-28T13:37:19Z</date>
+    <version>5.0</version>
+    <date>2020-06-11T14:36:17Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -10,8 +10,8 @@
     <templates>
         <template>
             <template>onec-session</template>
-            <name>onec-session</name>
-            <description/>
+            <name>Template App SRV1C Service</name>
+            <description>Сессии 1С полученные через Сервер администрирования RAS</description>
             <groups>
                 <group>
                     <name>Templates</name>
@@ -25,300 +25,119 @@
             <items>
                 <item>
                     <name>Конфигуратор</name>
-                    <type>0</type>
-                    <snmp_community/>
-                    <snmp_oid/>
-                    <key>designer-session[{$ONEC.CLUSTER.ID}]</key>
+                    <key>designer-session[{$ONEC.ARCH.TYPE},{$ONEC.VERSION},{$ONEC.CLUSTER.ID}]</key>
                     <delay>60</delay>
-                    <history>90d</history>
-                    <trends>365d</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>onec-server</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <master_item/>
                 </item>
                 <item>
                     <name>Толстые клиенты</name>
-                    <type>0</type>
-                    <snmp_community/>
-                    <snmp_oid/>
-                    <key>fat-session[{$ONEC.CLUSTER.ID}]</key>
+                    <key>fat-session[{$ONEC.ARCH.TYPE},{$ONEC.VERSION},{$ONEC.CLUSTER.ID}]</key>
                     <delay>60</delay>
-                    <history>90d</history>
-                    <trends>365d</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>onec-server</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <master_item/>
                 </item>
                 <item>
                     <name>Фоновые задания</name>
-                    <type>0</type>
-                    <snmp_community/>
-                    <snmp_oid/>
-                    <key>onec-bgj[{$ONEC.CLUSTER.ID}]</key>
+                    <key>onec-bgj[{$ONEC.ARCH.TYPE},{$ONEC.VERSION},{$ONEC.CLUSTER.ID}]</key>
                     <delay>60</delay>
-                    <history>90d</history>
-                    <trends>365d</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>onec-server</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <master_item/>
                 </item>
                 <item>
                     <name>Тонкие клиенты</name>
-                    <type>0</type>
-                    <snmp_community/>
-                    <snmp_oid/>
-                    <key>onec-session[{$ONEC.CLUSTER.ID}]</key>
+                    <key>onec-session[{$ONEC.ARCH.TYPE},{$ONEC.VERSION},{$ONEC.CLUSTER.ID}]</key>
                     <delay>60</delay>
-                    <history>90d</history>
-                    <trends>365d</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>onec-server</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <master_item/>
                 </item>
                 <item>
                     <name>Web клиенты</name>
-                    <type>0</type>
-                    <snmp_community/>
-                    <snmp_oid/>
-                    <key>web-session[{$ONEC.CLUSTER.ID}]</key>
+                    <key>web-session[{$ONEC.ARCH.TYPE},{$ONEC.VERSION},{$ONEC.CLUSTER.ID}]</key>
                     <delay>60</delay>
-                    <history>90d</history>
-                    <trends>365d</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>onec-server</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <master_item/>
                 </item>
             </items>
-            <discovery_rules/>
-            <httptests/>
             <macros>
+                <macro>
+                    <macro>{$ONEC.ARCH.TYPE}</macro>
+                    <value>x86_64</value>
+                    <description>Разрядность приложения:
+x86_64 или i386 для Linux
+" (x86)" или "" (без кавычек) для Windows
+</description>
+                </macro>
+                <macro>
+                    <macro>{$ONEC.VERSION}</macro>
+                    <value>8.3.16.1148</value>
+                    <description>Установленная версия 1С Предприятия на сервере. Только для Windows. Для поиска файла rac.</description>
+                </macro>
                 <macro>
                     <macro>{$ONEC.CLUSTER.ID}</macro>
                     <value>([a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})</value>
-                    <description>Идентификатор кластера 1С Предприятия. Можно узнать rac cluster list.</description>
+                    <description>Уникальный идентификатор кластера сервера 1С Предприятие. Узнать это значение можно, запустив на сервере команду rac cluster list</description>
                 </macro>
             </macros>
-            <templates/>
-            <screens/>
         </template>
     </templates>
     <graphs>
         <graph>
             <name>Сессии на сервере</name>
-            <width>900</width>
-            <height>200</height>
-            <yaxismin>0.0000</yaxismin>
-            <yaxismax>100.0000</yaxismax>
-            <show_work_period>1</show_work_period>
-            <show_triggers>1</show_triggers>
-            <type>1</type>
-            <show_legend>1</show_legend>
-            <show_3d>0</show_3d>
-            <percent_left>0.0000</percent_left>
-            <percent_right>0.0000</percent_right>
-            <ymin_type_1>0</ymin_type_1>
-            <ymax_type_1>0</ymax_type_1>
-            <ymin_item_1>0</ymin_item_1>
-            <ymax_item_1>0</ymax_item_1>
+            <type>STACKED</type>
             <graph_items>
                 <graph_item>
-                    <sortorder>0</sortorder>
-                    <drawtype>0</drawtype>
                     <color>F63100</color>
-                    <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
-                    <type>0</type>
                     <item>
                         <host>onec-session</host>
-                        <key>designer-session</key>
+                        <key>designer-session[{$ONEC.ARCH.TYPE},{$ONEC.VERSION},{$ONEC.CLUSTER.ID}]</key>
                     </item>
                 </graph_item>
                 <graph_item>
                     <sortorder>1</sortorder>
-                    <drawtype>0</drawtype>
                     <color>1A7C11</color>
-                    <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
-                    <type>0</type>
                     <item>
                         <host>onec-session</host>
-                        <key>onec-session</key>
+                        <key>onec-session[{$ONEC.ARCH.TYPE},{$ONEC.VERSION},{$ONEC.CLUSTER.ID}]</key>
                     </item>
                 </graph_item>
                 <graph_item>
                     <sortorder>2</sortorder>
-                    <drawtype>0</drawtype>
                     <color>2774A4</color>
-                    <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
-                    <type>0</type>
                     <item>
                         <host>onec-session</host>
-                        <key>web-session</key>
+                        <key>web-session[{$ONEC.ARCH.TYPE},{$ONEC.VERSION},{$ONEC.CLUSTER.ID}]</key>
                     </item>
                 </graph_item>
                 <graph_item>
                     <sortorder>3</sortorder>
-                    <drawtype>0</drawtype>
                     <color>FC6EA3</color>
-                    <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
-                    <type>0</type>
                     <item>
                         <host>onec-session</host>
-                        <key>fat-session</key>
+                        <key>fat-session[{$ONEC.ARCH.TYPE},{$ONEC.VERSION},{$ONEC.CLUSTER.ID}]</key>
                     </item>
                 </graph_item>
                 <graph_item>
                     <sortorder>4</sortorder>
-                    <drawtype>0</drawtype>
                     <color>AC8C14</color>
-                    <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
-                    <type>0</type>
                     <item>
                         <host>onec-session</host>
-                        <key>onec-bgj</key>
+                        <key>onec-bgj[{$ONEC.ARCH.TYPE},{$ONEC.VERSION},{$ONEC.CLUSTER.ID}]</key>
                     </item>
                 </graph_item>
             </graph_items>

@@ -6,35 +6,23 @@
 
 Мониторинг выполняется с помощью консольных утилит ras и rac через UserParameters (см. пример в `onec-srv-lin.conf`)
 
-ras - должен быть запущен всегда
+ras - должен быть запущен всегда. Пример Unit для Linux https://gist.github.com/Kirill/aedc342cca286bf8d45f45d267f7678a
 
 rac - обращается к ras за запрошенными данными
 
-Запуск ras (на том сервере который нужно мониторить)
+Шаблон для импорта: srv-1c-zabbix-temlate.xml
 
-    /opt/1C/v8.3/x86_64/ras --daemon cluster
-
-Шаблон для импорта: srv-1c-linux-zabbix-temlate.xml
+В шаблоне 3 макроса:
+- ```{$ONEC.ARCH.TYPE}``` - определение разрядности установленого сервера приложения 1С. Не путать с разрядностью самой Операционной системы.
+  - ```x86_64``` - для Linux; 1С x64 - файл rac расположен /opt/1C/v8.3/x86_64/
+  - ```i386``` - для Linux; 1С x32 - файл rac расположен /opt/1C/v8.3/i386/
+  - '' - (пустая строка, без каычек) для Windows; 1С x64 - файл rac расположен c:\program files\1cv8\8.3.x.y\bin\rac
+  - ' (x86)' - (без кавычек, перед открывающейся скобкой обязательно пробел) для Windows; 1С x32 - файл rac расположен c:\program files (x86)\1cv8\8.3.x.y\bin\rac
+- ```{$ONEC.VERSION}``` - версия установленной 1С Предприятие на сервере. Требуется только для Windows.
+- ```{$ONEC.CLUSTER.ID}``` - UUID кластера на сервере 1С Предприятие. Можно получить запустив на сервере команду ```rac cluster list```
 
 Реализовано пять параметров и один график
 
-Примеры:
-
-Запрос показывающий количество сеансов
-
-    /opt/1C/v8.3/x86_64/rac session --cluster=<uuid> list --infobase=<uuid> | grep app-id | wc -l
-
-Получить `<uuid>` для параметра --cluster
-
-    /opt/1C/v8.3/x86_64/rac cluster list
-
-Получить `<uuid>` для --infobase
-
-    /opt/1C/v8.3/x86_64/rac infobase --cluster=<uuid> summary list
-
-Запрос показывающий количество тонких клиентов
-
-    /opt/1C/v8.3/x86_64/rac session --cluster=<uuid> list --infobase=<uuid> | grep 1CV8C | wc -l
 
 ## Для windows
 
@@ -53,7 +41,7 @@ rac - обращается к ras за запрошенными данными
     UserParameter=onec-bgj,"C:\Program Files\1cv8\8.3.9.1850\bin\rac.exe" session --cluster=<uuid> list --infobase=<uuid> | find /c "BackgroundJob"
 
 Графики
-![screen01](https://github.com/bessonovevgen/srv-1c-linux-zabbix-template/blob/master/images/screen-01.png)
+![screen01](https://raw.githubusercontent.com/kirill/srv-1c-zabbix-template/master/images/screen-01.png)
 
 TODO
 
