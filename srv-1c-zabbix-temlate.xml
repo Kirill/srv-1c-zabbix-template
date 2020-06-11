@@ -28,7 +28,7 @@
                     <type>0</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>designer-session</key>
+                    <key>designer-session[{$ONEC.CLUSTER.ID}]</key>
                     <delay>60</delay>
                     <history>90d</history>
                     <trends>365d</trends>
@@ -69,7 +69,7 @@
                     <type>0</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>fat-session</key>
+                    <key>fat-session[{$ONEC.CLUSTER.ID}]</key>
                     <delay>60</delay>
                     <history>90d</history>
                     <trends>365d</trends>
@@ -110,7 +110,7 @@
                     <type>0</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>onec-bgj</key>
+                    <key>onec-bgj[{$ONEC.CLUSTER.ID}]</key>
                     <delay>60</delay>
                     <history>90d</history>
                     <trends>365d</trends>
@@ -151,7 +151,7 @@
                     <type>0</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>onec-session</key>
+                    <key>onec-session[{$ONEC.CLUSTER.ID}]</key>
                     <delay>60</delay>
                     <history>90d</history>
                     <trends>365d</trends>
@@ -192,7 +192,7 @@
                     <type>0</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>web-session</key>
+                    <key>web-session[{$ONEC.CLUSTER.ID}]</key>
                     <delay>60</delay>
                     <history>90d</history>
                     <trends>365d</trends>
@@ -231,7 +231,13 @@
             </items>
             <discovery_rules/>
             <httptests/>
-            <macros/>
+            <macros>
+                <macro>
+                    <macro>{$ONEC.CLUSTER.ID}</macro>
+                    <value>([a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})</value>
+                    <description>Идентификатор кластера 1С Предприятия. Можно узнать rac cluster list.</description>
+                </macro>
+            </macros>
             <templates/>
             <screens/>
         </template>
